@@ -1,0 +1,89 @@
+.App{
+    .sidebar{
+        width:16%;
+        height: 100vh;
+        background-color: #191D2B ;
+        position: fixed;
+        z-index: 11;
+        border-right: 5px solid #2e344e;
+        transform-origin: left;
+        // media for Side bar
+        @media screen and (max-width: 1000px){
+            transform: translate(-100%);
+            transition: all .4s ease-in-out;
+            width: 20%;
+        }
+        @media screen and (max-width: 411px){
+            width: 50%;
+        }
+    }
+    // Toggle 
+    .nav-toogle{
+        @media screen and (max-width: 1000px){
+            transition: all .4s ease-in-out;
+            transform: translate(0);
+            
+        }
+    }
+
+    .main-content{
+        width:84%;
+        margin-left: 16%;
+        background-color: #10121B;
+        min-height: 100vh;
+        // background: url(../img/backimg.jpg);
+        display: grid;
+        position: relative;
+        .content{
+            margin:  5rem 15rem;
+            @media screen and (max-width: 1100px){
+                margin:  2rem 10rem;
+            }
+            @media screen and (max-width: 1400px){
+                margin:  3rem 10rem;
+            }
+            @media screen and (max-width: 710px){
+                margin:  2rem auto;
+            }
+            // @media screen and (max-width: 360px){
+            //     margin:  1rem auto;
+            // }
+        }
+        @media screen and (max-width: 1000px){
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}
+
+// nav-btn scss
+.nav-btn{
+    position: absolute;
+    z-index: 10;
+    right: 10%;
+    top:5%;
+    width: 4rem;
+    height: 4rem;
+    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    .lines1, .lines2, .lines3{
+        height: .4rem;
+        width: 100%;
+        background-color: #213ea8;
+        pointer-events: none;
+        display: none;
+        border-radius: 20px;
+        &:not(:last-child){
+            margin-bottom: .5rem;
+        }
+    }
+    @media screen and (max-width: 1000px){
+        display: block;
+        .lines1, .lines2, .lines3{
+            display: block;
+        }
+    }
+}
